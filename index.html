@@ -1,15 +1,13 @@
 <table id="schedule" border="1">
 <tr>
 <td><strong>Block</strong></td>
-<td><strong>Time</strong></td>
 </tr>
 </table>
 <script>
 
 	//Function for adding the items
-	function scheduleItem (block, time) {
+	function scheduleItem (block) {
     this.block = block; 
-    this.time = time;
 	}
 	//Prototype tag lets js add to existing code, eg. the rows (I think)
 	scheduleItem.prototype.write = function() {
@@ -17,10 +15,8 @@
     var table=document.getElementById("schedule");
     var row=table.insertRow(-1);
     var cell1=row.insertCell(0);
-    var cell2=row.insertCell(1);
 
     cell1.innerHTML=this.block;
-    cell2.innerHTML=this.time;
 
 	}   
 	//Gets the current date
@@ -31,134 +27,85 @@
 	var letterDay=prompt("Enter the letter day:");
 	var currentLetterDay = letterDay.toUpperCase();
 
-	//A-Day blocks
-   	var aB1 = new scheduleItem('19th C Brit Lit','8:00-9:15');
-    var aB2 = new scheduleItem('CWP', '9:20-9:45');
-    var aB3 = new scheduleItem('Physics', '9:50-11:05');
-    var aB4 = new scheduleItem('Early Lunch', '11:10-11:40');
-    var aB5 = new scheduleItem('Intro to Programming', '11:45-1:00');
-    var aB6 = new scheduleItem('Free', '1:05-2:20');
-    var aB7 = new scheduleItem('Meeting Period', '2:25-2:55');
-    //B-Day blocks
-    var bB1 = new scheduleItem('Free', '8:00-9:15');
-    var bB2 = new scheduleItem('CWP', '9:20-9:45');
-    var bB3 = new scheduleItem('Precalc', '9:50-11:05');
-    var bB4 = new scheduleItem('Early Lunch', '11:10-11:40');
-    var bB5 = new scheduleItem('Myth + Film', '11:45-1:00');
-    var bB6 = new scheduleItem('Modern US History', '1:05-2:20');
-    var bB7 = new scheduleItem('Meeting Period', '2:25-2:55');
-    //C-Day blocks
-    var cB1 = new scheduleItem('Physics', '8:00-9:15');
-	var cB2 = new scheduleItem('CWP', '9:20-9:45');
-	var cB3 = new scheduleItem('Free', '9:50-11:05');
-	var cB4 = new scheduleItem('19th C Brit Lit', '11:10-12:25');
-	var cB5 = new scheduleItem('Late Lunch', '12:30-1:00');
-	var cB6 = new scheduleItem('Intro to Programming', "1:05-2:20");
-	var cB7 = new scheduleItem('Meeting Period', "2:25-2:55");
-	//D-Day blocks
-	var dB1 = new scheduleItem('Precalc','8:00-9:15');
-	var dB2 = new scheduleItem('CWP', '9:20-9:45');
-	var dB3 = new scheduleItem('Modern US History','9:50-11:05');
-	var dB4 = new scheduleItem('Lunch 2','11:10-1:00');
-	var dB5 = new scheduleItem('Myth + Film','1:05-2:20');
-	var dB6 = new scheduleItem('Meeting Period','2:25-2:55');
-	//E-Day blocks
-	var eB1 = new scheduleItem('Intro to Programming','8:00-9:15');
-	var eB2 = new scheduleItem('CWP','9:20-9:45');
-	var eB3 = new scheduleItem('19th C Brit Lit','9:50-11:05');
-	var eB4 = new scheduleItem('Lunch 2','11:10-1:00');
-	var eB5 = new scheduleItem('Physics','1:05-2:20');
-	var eB6 = new scheduleItem('Meeting Period','2:25-2:55');
-	//F-Day blocks
-	var fB1 = new scheduleItem('Myth + Film','8:00-9:15');
-	var fB2 = new scheduleItem('CWP','9:20-9:45');
-	var fB3 = new scheduleItem('Free','9:50-11:05');
-	var fB4 = new scheduleItem('Early Lunch','11:10-11:40');
-	var fB5 = new scheduleItem('Modern US History','11:45-1:05');
-	var fB6 = new scheduleItem('Precalc','1:05-2:20');
-	var fB7 = new scheduleItem('Meeting Period','2:25-2:55');
-	//G-Day blocks
-	var gB1 = new scheduleItem('Free','8:00-9:15');
-	var gB2 = new scheduleItem('CWP','9:20-9:45');
-	var gB3 = new scheduleItem('Intro Programming','9:50-11:05');
-	var gB4 = new scheduleItem('Physics','11:10-12:25');
-	var gB5 = new scheduleItem('Late Lunch', '12:30-1:00');
-	var gB6 = new scheduleItem('19th C Brit Lit','1:05-2:20');
-	var gB7 = new scheduleItem('Meeting Period','2:25-2:55');
-	//H-Day blocks
-	var hB1 = new scheduleItem('Modern US History','8:00-9:15');
-	var hB2 = new scheduleItem('CWP','9:20-9:45');
-	var hB3 = new scheduleItem('Myth + Film','9:50-11:05');
-	var hB4 = new scheduleItem('Early Lunch','11:10-11:40');
-	var hB5 = new scheduleItem('Precalc','11:45-1:05');
-	var hB6 = new scheduleItem('Free','1:05-2:20');
-	var hB7 = new scheduleItem('Meeting Period','2:25-2:55');
+	var block1 = new scheduleItem("Brit Lit");
+	var block2 = new scheduleItem("Physics");
+	var block3 = new scheduleItem("Intro to Programming");
+	var block4 = new scheduleItem("Free");
+	var block5 = new scheduleItem("Free");
+	var block6 = new scheduleItem("Precalc");
+	var block7 = new scheduleItem("Myth + Film");
+	var block8 = new scheduleItem("MUSH");
+	var cwp = new scheduleItem("CWP");
+	var lunch1 = new scheduleItem("Early Lunch");
+	var lunch2 = new scheduleItem("Lunch 2");
+	var lunch3 = new scheduleItem("Late Lunch");
+	var meetingPeriod = new scheduleItem("Meeting Period");
 	//Weekend blocks
-	var weekend = new scheduleItem('Weekend','Weekend');
+	var error = new scheduleItem('ERROR');
 
 	//Printing the letter day based on outcome of the letter day loop
-	if(currentLetterDay == "A"){ //Upper case
-		aB1.write();
-		aB2.write();
-		aB3.write();
-		aB4.write();
-		aB5.write();
-		aB6.write();
-		aB7.write();
+	if(currentLetterDay == "A"){ 
+		block1.write();
+		cwp.write();
+		block2.write();
+		lunch1.write();
+		block3.write();
+		block4.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "B"){
-		bB1.write();
-		bB2.write();
-		bB3.write();
-		bB4.write();
-		bB5.write();
-		bB6.write();
-		bB7.write();
+		block5.write();
+		cwp.write();
+		block6.write();
+		lunch1.write();
+		block7.write();
+		block8.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "C"){
-		cB1.write();
-		cB2.write();
-		cB3.write();
-		cB4.write();
-		cB5.write();
-		cB6.write();
-		cB7.write();
+		block2.write();
+		cwp.write();
+		block4.write();
+		block1.write();
+		lunch3.write();
+		block3.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "D"){
-		dB1.write();
-		dB2.write();
-		dB3.write();
-		dB4.write();
-		dB5.write();
-		dB6.write();
+		block6.write();
+		cwp.write();
+		block8.write();
+		lunch2.write();
+		block7.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "E"){
-		eB1.write();
-		eB2.write();
-		eB3.write();
-		eB4.write();
-		eB5.write();
-		eB6.write();
+		block3.write();
+		cwp.write();
+		block1.write();
+		lunch2.write();
+		block2.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "F"){
-		fB1.write();
-		fB2.write();
-		fB3.write();
-		fB4.write();
-		fB5.write();
-		fB6.write();
-		fB7.write();
+		block7.write();
+		block5.write();
+		lunch1.write();
+		block8.write():
+		block6.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "G"){
-		gB1.write();
-		gB2.write();
-		gB3.write();
-		gB4.write();
-		gB5.write();
-		gB6.write();
-		gB7.write();
+		block4.write();
+		cwp.write();
+		block3.write();
+		block2.write();
+		lunch3.write();
+		block1.write();
+		meetingPeriod.write();
 	} else if(currentLetterDay == "H"){
-		hB1.write();
-		hB2.write();
-		hB3.write();
-		hB4.write();
-		hB6.write();
-		hB7.write();
+		block8.write();
+		cwp.write();
+		block7.write();
+		lunch1.write();
+		block6.write();
+		block1.write();
+		meetingPeriod.write();
 	} else { //Weekend
-		weekend.write();
+		error.write();
 	}
 </script>
