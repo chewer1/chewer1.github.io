@@ -5,25 +5,20 @@
 </tr>
 </table>
 <script>
-
 	//Function for adding the items
 	function scheduleItem (block) {
     this.block = block; 
 	}
 	//Prototype tag lets js add to existing code, eg. the rows (I think)
 	scheduleItem.prototype.write = function() {
-
     var table=document.getElementById("schedule");
     var row=table.insertRow(-1);
     var cell1=row.insertCell(0);
     cell1.innerHTML=this.block;
-
 	} 
-
 	//The starting letter day
 	var letterDay=prompt("Enter the letter day:");
 	var currentLetterDay = letterDay.toUpperCase();
-
 	var block1 = new scheduleItem("Brit Lit");
 	var block2 = new scheduleItem("Physics");
 	var block3 = new scheduleItem("Intro to Programming");
@@ -36,11 +31,10 @@
 	var lunch1 = new scheduleItem("Early Lunch");
 	var lunch2 = new scheduleItem("Lunch 2");
 	var lunch3 = new scheduleItem("Late Lunch");
-	var helpDesk = new scheduleItem("Help Desk");//Help desk period
+	var helpDesk = new scheduleItem("Help Desk");
 	var meetingPeriod = new scheduleItem("Meeting Period");
 	//Error handeling
 	var error = new scheduleItem('ERROR');
-
 	//Printing the letter day based on outcome of the letter day loop
 	if(currentLetterDay == "A"){ 
 		block1.write();
