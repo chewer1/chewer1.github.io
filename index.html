@@ -36,6 +36,7 @@
 	var lunch1 = new scheduleItem("Early Lunch");
 	var lunch2 = new scheduleItem("Lunch 2");
 	var lunch3 = new scheduleItem("Late Lunch");
+	var helpDesk = new scheduleItem("Help Desk");//Help desk period
 	var meetingPeriod = new scheduleItem("Meeting Period");
 	//Error handeling
 	var error = new scheduleItem('ERROR');
@@ -47,7 +48,7 @@
 		block2.write();
 		lunch1.write();
 		block3.write();
-		block4.write();
+		helpDesk.write();
 		meetingPeriod.write();
 	} else if(currentLetterDay == "B"){
 		block5.write();
@@ -101,7 +102,7 @@
 		block7.write();
 		lunch1.write();
 		block6.write();
-		block5.write();
+		helpDesk.write();
 		meetingPeriod.write();
 	} else { //Weekend
 		error.write();
