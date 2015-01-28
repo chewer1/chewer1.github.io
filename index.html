@@ -40,10 +40,10 @@ td {
 	//The starting letter day
 	var letterDay = prompt("Enter the letter day:");
 	var currentLetterDay = letterDay.toUpperCase();
-	var block1 = new scheduleItem("Brit Lit");
+	var block1 = new scheduleItem("Free");
 	var block2 = new scheduleItem("Physics");
 	var block3 = new scheduleItem("Intro to Programming");
-	var block4 = new scheduleItem("Free");
+	var block4 = new scheduleItem("Satire");
 	var block5 = new scheduleItem("Free");
 	var block6 = new scheduleItem("Precalc");
 	var block7 = new scheduleItem("Myth + Film");
@@ -77,8 +77,7 @@ td {
 		block2.write();
 		cwp.write();
 		block4.write();
-		block1.write();
-		lunch3.write();
+		lunch2.write();
 		block3.write();
 		meetingPeriod.write();
 	} else if(currentLetterDay == "D"){
@@ -92,7 +91,8 @@ td {
 		block3.write();
 		cwp.write();
 		block1.write();
-		lunch2.write();
+		block4.write();
+		lunch3.write();
 		block2.write();
 		meetingPeriod.write();
 	} else if(currentLetterDay == "F"){
@@ -117,7 +117,7 @@ td {
 		block7.write();
 		lunch1.write();
 		block6.write();
-		helpDesk.write();
+		block5.write();
 		meetingPeriod.write();
 	} else { //Errors 
 		error.write();
