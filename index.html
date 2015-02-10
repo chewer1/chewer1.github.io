@@ -1,44 +1,50 @@
 <style>
-html, body {
-	background-color: #756b5e;
-}
+	html, body 
+	{
+		background-color: #756b5e;
+	}
 
-table {
-	background-color: #aaaaaa;
-}
-tr {
-	background-color: #191919;
-	font-size: 45px;
-	margin: 0;
-}
-td {
-	color: #99ccff;
-    font-family: 'Avenir', sans-serif;
-    font-size: 45px;
-    text-align: center;
-}
+	table 
+	{
+		background-color: #aaaaaa;
+	}
+	tr 
+	{
+		background-color: #191919;
+		font-size: 45px;
+		margin: 0;
+	}
+	td 
+	{
+		color: #99ccff;
+    	font-family: 'Avenir', sans-serif;
+    	font-size: 45px;
+    	text-align: center;
+	}
 </style>
 <head>
-	<title>Schedule</title>
+	<title>MKA Schedule</title>
 </head>
 <center>
-<table id="schedule" border="1">
-<tr>
-<td><strong>Block</strong></td>
-</tr>
-</table>
+	<table id="schedule" border="1">
+		<tr>
+			<td><strong>Block</strong></td>
+		</tr>
+	</table>
 </center>
 <script>
 	//Function for adding the items
-	function scheduleItem (block) {
-    this.block = block; 
+	function scheduleItem (block) 
+	{
+    	this.block = block; 
 	}
-	//Prototype tag lets js add to existing code, eg. the rows (I think)
-	scheduleItem.prototype.write = function() {
-    var table=document.getElementById("schedule");
-    var row=table.insertRow(-1);
-    var cell1=row.insertCell(0);
-    cell1.innerHTML=this.block;
+	//Insertion function
+	scheduleItem.prototype.write = function() 
+	{
+    	var table=document.getElementById("schedule");
+    	var row=table.insertRow(-1);
+    	var cell1=row.insertCell(0);
+    	cell1.innerHTML=this.block;
 	} 
 	//The starting letter day
 	var letterDay = prompt("Enter the letter day:");
@@ -126,3 +132,4 @@ td {
 		error.write();
 	}
 </script>
+<!-- Code by David Harvey -->
