@@ -14,6 +14,7 @@
 		font-size: 45px;
 		margin: 0;
 	}
+
 	td 
 	{
 		color: #99ccff;
@@ -21,7 +22,9 @@
     	font-size: 45px;
     	text-align: center;
 	}
+
 </style>
+
 <head>
 	<title>MKA Schedule</title>
 </head>
@@ -32,12 +35,14 @@
 		</tr>
 	</table>
 </center>
+
 <script>
 	//Function for adding the items
 	function scheduleItem (block) 
 	{
     	this.block = block; 
 	}
+
 	//Insertion function
 	scheduleItem.prototype.write = function() 
 	{
@@ -46,6 +51,7 @@
     	var cell1=row.insertCell(0);
     	cell1.innerHTML=this.block;
 	} 
+
 	//The starting letter day
 	var letterDay = prompt("Enter the letter day:");
 	var currentLetterDay = letterDay.toUpperCase();
@@ -65,6 +71,7 @@
 	var meetingPeriod = new scheduleItem("Meeting Period");
 	//Error handeling
 	var error = new scheduleItem('Error: Invalid input, please reload the page and try again.');
+
 	//Printing the letter day based on outcome of the letter day loop
 	if(currentLetterDay == "A"){ 
 		block1.write();
