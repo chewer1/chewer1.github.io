@@ -54,7 +54,7 @@
 
 	//The starting letter day
 	var letterDay = prompt("Enter the letter day:");
-	var currentLetterDay = letterDay.toUpperCase();
+	var letterDay = letterDay.toUpperCase();
 	var block1 = new scheduleItem("Free");
 	var block2 = new scheduleItem("Physics");
 	var block3 = new scheduleItem("Intro to Programming");
@@ -73,7 +73,7 @@
 	var error = new scheduleItem('Error: Invalid input, please reload the page and try again.');
 
 	//Printing the letter day based on outcome of the letter day loop
-	if(currentLetterDay == "A"){ 
+	if(letterDay == "A"){ 
 		block1.write();
 		cwp.write();
 		block2.write();
@@ -81,7 +81,7 @@
 		block3.write();
 		block4.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "B"){
+	} else if(letterDay == "B"){
 		block5.write();
 		cwp.write();
 		block6.write();
@@ -89,21 +89,21 @@
 		block7.write();
 		block8.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "C"){
+	} else if(letterDay == "C"){
 		block2.write();
 		cwp.write();
 		block4.write();
 		lunch2.write();
 		block3.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "D"){
+	} else if(letterDay == "D"){
 		block6.write();
 		cwp.write();
 		block8.write();
 		lunch2.write();
 		block7.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "E"){
+	} else if(letterDay == "E"){
 		block3.write();
 		cwp.write();
 		block1.write();
@@ -111,7 +111,7 @@
 		lunch3.write();
 		block2.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "F"){
+	} else if(letterDay == "F"){
 		block7.write();
 		cwp.write();
 		block5.write();
@@ -119,7 +119,7 @@
 		block8.write();
 		block6.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "G"){
+	} else if(letterDay == "G"){
 		block4.write();
 		cwp.write();
 		block3.write();
@@ -127,7 +127,7 @@
 		lunch3.write();
 		helpDesk.write();
 		meetingPeriod.write();
-	} else if(currentLetterDay == "H"){
+	} else if(letterDay == "H"){
 		block8.write();
 		cwp.write();
 		block7.write();
